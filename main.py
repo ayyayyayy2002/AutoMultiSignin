@@ -36,7 +36,7 @@ if UA:
         except Exception as e:
             print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
-                file.write("\n  😅SouthPlus签到出错")
+                file.write(f"\n  😅SouthPlus签到出错：\n{str(e)}")
     else:
         with open("a.txt", "a", encoding='utf-8') as file:
             file.write("\n  😢不进行Southplus签到")
@@ -54,7 +54,7 @@ if UA:
         except Exception as e:
             print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
-                file.write("\n  😅AcgFun签到出错")
+                file.write(f"\n  😅AcgFun签到出错：\n{str(e)}")
 
     else:
         with open("a.txt", "a", encoding='utf-8') as file:
@@ -72,7 +72,7 @@ if UA:
         except Exception as e:
             print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
-                file.write("\n  😅VikACG签到出错")
+                file.write(f"\n  😅VikACG签到出错：\n{str(e)}")
     else:
         with open("a.txt", "a", encoding='utf-8') as file:
             file.write("\n  😢不进行VikACG签到")
