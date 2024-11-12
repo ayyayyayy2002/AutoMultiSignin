@@ -1,0 +1,2 @@
+# AutoMultiSignin
+使用Github和Selenium运行的自动签到脚本，用Python编写
