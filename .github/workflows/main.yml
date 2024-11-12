@@ -47,4 +47,4 @@ jobs:
           VIKACG: ${{ secrets.VIKACG }}  # 使用 Secret 变量
 
         run: |
-          python main.py  # 替换为实际的脚本名称
+          python VikACG.py  # 替换为实际的脚本名称
