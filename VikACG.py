@@ -52,9 +52,9 @@ for name, value in cookies.items():
 
 
 try:
-    driver.get("https://www.vikacg.com/wallet")
+    driver.get("https://www.vikacg.com/wallet/mission")
     daily = WebDriverWait(driver, 20).until(
-        EC.presence_of_element_located((By.XPATH, '//*[@id="__nuxt"]/div/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div[2]/button'))
+        EC.presence_of_element_located((By.XPATH, '//*[@id="preview-input-dynamic"]/div[1]/div[2]/div[2]/button'))
     )
     daily.click()
     # 创建一个名为a.txt的空文件
