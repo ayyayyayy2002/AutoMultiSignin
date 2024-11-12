@@ -21,6 +21,7 @@ BOTTOKEN = os.environ.get('BOTTOKEN')
 USERID = os.environ.get('USERID')
 SOUTHPLUS = os.environ.get('SOUTHPLUS')
 ACGFUN = os.environ.get('ACGFUN')
+VIKACG = os.environ['VIKACG']
 
 # 检查 UA 是否存在，并打印
 if UA:
@@ -61,7 +62,20 @@ if UA:
 
 
 
-
+    if VIKACG:
+        with open("a.txt", "a", encoding='utf-8') as file:
+            file.write("\nVikACG签到结果：")
+        try:
+            # 运行 SouthPlus.py 脚本
+            result = subprocess.run(['python', 'VikACG.py'], check=True, capture_output=True, text=True)
+            print(result.stdout)  # 如果成功，打印标准输出
+        except Exception as e:
+            print(e)
+            with open("a.txt", "a", encoding='utf-8') as file:
+                file.write("\n  😅VikACG签到出错")
+    else:
+        with open("a.txt", "a", encoding='utf-8') as file:
+            file.write("\n  😢不进行VikACG签到")
 
 
 
