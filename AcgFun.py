@@ -39,12 +39,11 @@ options.add_argument("disable-cache")#禁用缓存
 options.add_argument("--headless")
 #service = Service(executable_path=chrome_driver_path)
 #driver = webdriver.Chrome(service=service,options=options)  # 启动 Chrome 浏览器
-driver = webdriver.Chrome(options=options)
-driver.set_window_size(1000, 700)  # 设置浏览器窗口大小（宽度, 高度）
 #driver.set_window_position(-850, 775)  # 设置浏览器窗口位置（x, y）
+#driver.set_window_size(1000, 700)  # 设置浏览器窗口大小（宽度, 高度）
 #driver.set_window_position(-850, 1355)
+driver = webdriver.Chrome(options=options)
 driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-
 driver.get("https://acgfun.moe/")
 for name, value in cookies.items():
     driver.add_cookie({'name': name, 'value': value})
@@ -66,7 +65,8 @@ try:
 except Exception as e:
     print('')
     with open("a.txt", "a", encoding='utf-8') as file:
-        file.write(f"\n  ❗签到失败：\n{str(e)}")
+        file.write("\n  ❗签到失败！")
+        print(e)
 
 
 driver.quit()
