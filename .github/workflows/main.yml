@@ -3,7 +3,7 @@ name: 全自动签到
 on:
   schedule:
     # 每天北京时间（UTC+8）凌晨1点触发
-    - cron: '0 17 * * *' # UTC时间，1 AM 北京时间是 5 PM UTC 前一天
+    - cron: '0 10 * * *' # UTC时间，1 AM 北京时间是 5 PM UTC 前一天
   workflow_dispatch: # 手动触发
 
 jobs:

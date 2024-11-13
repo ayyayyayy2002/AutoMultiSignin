@@ -52,7 +52,6 @@ for name, value in cookies.items():
 try:
     driver.get("https://www.eohut.com/")
     driver.execute_script("document.querySelector('.initiate-checkin').click();")
-    # 创建一个名为a.txt的空文件
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔签到成功！")
 

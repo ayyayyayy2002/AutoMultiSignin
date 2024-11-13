@@ -50,15 +50,7 @@ for name, value in cookies.items():
 
 try:
     driver.get("https://acgfun.moe/")
-    daily = WebDriverWait(driver, 20).until(
-        EC.presence_of_element_located((By.XPATH, '//*[@id="k_misign_topb"]'))
-    )
-    link = daily.find_element(By.TAG_NAME, 'a').get_attribute('href')
-    print(link)
-    driver.get(link)
-    element = WebDriverWait(driver, 20).until(
-        EC.presence_of_element_located((By.XPATH, "//*[contains(text(), '今日已签')]"))
-    )
+    driver.execute_script("document.getElementById('k_misign_topb').querySelector('a').click();")
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔签到成功！")
 
