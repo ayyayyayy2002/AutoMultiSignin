@@ -110,7 +110,7 @@ else:
 if USERID:
     with open('a.txt', 'r', encoding='utf-8') as file:
         content = file.read()  # 读取文件内容
-
+    print(content)
     # 发送消息到 Telegram
     url = f'https://api.telegram.org/bot{BOTTOKEN}/sendMessage'
     payload = {

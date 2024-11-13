@@ -78,6 +78,7 @@ except Exception as e:
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write(f"\n  ❗日常任务失败：{repr(e)}")
         print(e)
+        print(repr(e))
 
 
 
