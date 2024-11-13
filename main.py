@@ -2,18 +2,6 @@ import subprocess
 import requests
 import os
 
-
-
-
-
-
-
-
-
-
-
-
-
 with open("a.txt", "w", encoding='utf-8') as file:
     pass
 UA = os.environ.get('UA')
@@ -25,6 +13,7 @@ EOHUT = os.environ['EOHUT']
 
 # 检查 UA 是否存在，并打印
 if UA:
+    print('\n', UA, '\n')
 
     if SOUTHPLUS:
         with open("a.txt", "a", encoding='utf-8') as file:
@@ -40,9 +29,6 @@ if UA:
         with open("a.txt", "a", encoding='utf-8') as file:
             file.write("\n  😢不进行Southplus签到")
 
-
-
-
     if ACGFUN:
         with open("a.txt", "a", encoding='utf-8') as file:
             file.write("\nAcgFun签到结果：")
@@ -57,8 +43,6 @@ if UA:
     else:
         with open("a.txt", "a", encoding='utf-8') as file:
             file.write("\n  😢不进行AcgFun签到")
-
-
 
     if EOHUT:
         with open("a.txt", "a", encoding='utf-8') as file:
@@ -99,13 +83,6 @@ if UA:
 else:
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("❗未设置UA，脚本拒绝执行")
-
-
-
-
-
-
-
 
 if USERID:
     with open('a.txt', 'r', encoding='utf-8') as file:
