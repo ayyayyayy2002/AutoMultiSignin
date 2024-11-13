@@ -51,8 +51,7 @@ try:
     driver.get("https://www.eohut.com/")
     print('加载完成')
 
-    log=driver.execute_script("""var button = document.querySelector('.initiate-checkin');
-    button.click();""")
+    log=driver.execute_script("document.querySelector('.initiate-checkin').click();")
     print(log)
     # 创建一个名为a.txt的空文件
     with open("a.txt", "a", encoding='utf-8') as file:

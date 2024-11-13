@@ -14,6 +14,8 @@ EOHUT = os.environ['EOHUT']
 # 检查 UA 是否存在，并打印
 if UA:
     print('\n', UA, '\n')
+    print(UA)
+    print('aaaaa')
 
     if SOUTHPLUS:
         with open("a.txt", "a", encoding='utf-8') as file:
