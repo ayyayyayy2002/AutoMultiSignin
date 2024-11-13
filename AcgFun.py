@@ -55,9 +55,12 @@ try:
     daily = WebDriverWait(driver, 20).until(
         EC.presence_of_element_located((By.XPATH, '//*[@id="k_misign_topb"]'))
     )
-    href_value = daily.get_attribute('href')
-    print(href_value)
-    driver.get(f"https://acgfun.moe/{href_value}")
+    link = daily.find_element(By.TAG_NAME, 'a').get_attribute('href')
+    print(link)
+    driver.get(link)
+    element = WebDriverWait(driver, 20).until(
+        EC.presence_of_element_located((By.XPATH, "//*[contains(text(), '今日已签')]"))
+    )
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔签到成功！")
 

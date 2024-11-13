@@ -1,4 +1,8 @@
+/venv/
 /.idea/
 /chrome-win/
 /chromedriver.exe
 
+a.txt
+test.py
+aaa.py
