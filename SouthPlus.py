@@ -51,12 +51,7 @@ for name, value in cookies.items():
 
 try:
     driver.get("https://www.south-plus.net/plugin.php?H_name-tasks.html")
-    print(driver.page_source)
-    daily = WebDriverWait(driver, 20).until(
-        EC.presence_of_element_located((By.XPATH, '//*[@id="p_15"]/a/img'))
-    )
-    daily.click()
-    # 创建一个名为a.txt的空文件
+    driver.execute_script("""document.getElementById("p_15").getElementsByTagName("a")[0].click();""")
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔日常任务领取！")
 
@@ -68,10 +63,7 @@ except Exception as e:
 
 try:
     driver.get("https://www.south-plus.net/plugin.php?H_name-tasks-actions-newtasks.html.html")
-    element = WebDriverWait(driver, 20).until(
-        EC.presence_of_element_located((By.XPATH, '//*[@id="both_15"]/a/img'))
-    )
-    element.click()
+    driver.execute_script("""document.getElementById("both_15").getElementsByTagName("a")[0].click();""")
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔日常任务完成！")
 
