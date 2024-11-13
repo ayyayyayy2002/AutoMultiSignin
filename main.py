@@ -31,7 +31,7 @@ if UA:
             file.write("\nSouthplus签到结果：")
         try:
             # 运行 SouthPlus.py 脚本
-            subprocess.run(['python', 'SouthPlus.py'], check=True, capture_output=True)
+            subprocess.run(['python', 'SouthPlus.py'], check=True, capture_output=False)
         except Exception as e:
             print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
@@ -65,7 +65,7 @@ if UA:
             file.write("\nVikACG签到结果：")
         try:
             # 运行 SouthPlus.py 脚本
-            subprocess.run(['python', 'VikACG.py'], check=True, capture_output=True)
+            subprocess.run(['python', 'VikACG.py'], check=True, capture_output=False)
         except Exception as e:
             print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
