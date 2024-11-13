@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.service import Service
@@ -46,6 +48,7 @@ driver.set_window_size(1000, 700)  # 设置浏览器窗口大小（宽度, 高�
 driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
 driver.get("https://www.south-plus.net/")
+time.sleep(10)
 for name, value in cookies.items():
     driver.add_cookie({'name': name, 'value': value})
 
