@@ -44,15 +44,14 @@ driver.set_window_size(1000, 700)  # 设置浏览器窗口大小（宽度, 高�
 #driver.set_window_position(-850, 775)  # 设置浏览器窗口位置（x, y）
 #driver.set_window_position(-850, 1355)
 driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-
+driver.get("https://www.eohut.com/")
+for name, value in cookies.items():
+    driver.add_cookie({'name': name, 'value': value})
 
 
 try:
     driver.get("https://www.eohut.com/")
-    print('加载完成')
-
-    log=driver.execute_script("document.querySelector('.initiate-checkin').click();")
-    print(log)
+    driver.execute_script("document.querySelector('.initiate-checkin').click();")
     # 创建一个名为a.txt的空文件
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔签到成功！")

@@ -2,8 +2,7 @@ import subprocess
 import requests
 import os
 
-with open("a.txt", "w", encoding='utf-8') as file:
-    pass
+
 UA = os.environ.get('UA')
 BOTTOKEN = os.environ.get('BOTTOKEN')
 USERID = os.environ.get('USERID')
@@ -11,12 +10,21 @@ SOUTHPLUS = os.environ.get('SOUTHPLUS')
 ACGFUN = os.environ.get('ACGFUN')
 EOHUT = os.environ['EOHUT']
 
+
+
+
+
+
+
+
+with open("a.txt", "w", encoding='utf-8') as file:
+    file.write(f"{UA}")
+
+
+
+
 # 检查 UA 是否存在，并打印
 if UA:
-    print('\n', UA, '\n')
-    print(UA)
-    print('aaaaa')
-
     if SOUTHPLUS:
         with open("a.txt", "a", encoding='utf-8') as file:
             file.write("\nSouthplus签到结果：")
@@ -24,7 +32,7 @@ if UA:
             # 运行 SouthPlus.py 脚本
             subprocess.run(['python', 'SouthPlus.py'], check=True, capture_output=False)
         except Exception as e:
-            print(e)
+            #print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
                 file.write(f"\n  😅SouthPlus签到出错：\n{str(e)}")
     else:
@@ -38,7 +46,7 @@ if UA:
             # 运行 SouthPlus.py 脚本
             subprocess.run(['python', 'AcgFun.py'], check=True, capture_output=False)
         except Exception as e:
-            print(e)
+            #print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
                 file.write(f"\n  😅AcgFun签到出错：\n{str(e)}")
 
@@ -53,7 +61,7 @@ if UA:
             # 运行 SouthPlus.py 脚本
             subprocess.run(['python', 'EoHut.py'], check=True, capture_output=False)
         except Exception as e:
-            print(e)
+            #print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
                 file.write(f"\n  😅EoHut签到出错：\n{str(e)}")
     else:
