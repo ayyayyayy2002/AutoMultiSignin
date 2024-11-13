@@ -51,6 +51,7 @@ for name, value in cookies.items():
 
 try:
     driver.get("https://www.south-plus.net/plugin.php?H_name-tasks.html")
+    print(driver.page_source)
     daily = WebDriverWait(driver, 20).until(
         EC.presence_of_element_located((By.XPATH, '//*[@id="p_15"]/a/img'))
     )
