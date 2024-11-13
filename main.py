@@ -49,7 +49,7 @@ if UA:
             file.write("\nEoHut签到结果：")
         try:
             # 运行 SouthPlus.py 脚本
-            subprocess.run(['python', 'VikACG.py'], check=True, capture_output=False)
+            subprocess.run(['python', 'EoHut.py'], check=True, capture_output=False)
         except Exception as e:
             print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
