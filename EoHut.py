@@ -15,10 +15,10 @@ import os
 
 #chrome_binary_path = os.environ['CHROME']
 #chrome_driver_path = = os.environ['DRIVER']
-VIKACG = os.environ['VIKACG']
+EOHUT = os.environ['EOHUT']
 UA = os.environ['UA']
 cookies = {}
-for cookie in VIKACG.split('; '):
+for cookie in EOHUT.split('; '):
     name, value = cookie.split('=', 1)  # 只分割第一个等号
     cookies[name] = value
 
@@ -45,17 +45,15 @@ driver.set_window_size(1000, 700)  # 设置浏览器窗口大小（宽度, 高�
 #driver.set_window_position(-850, 1355)
 driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
-driver.get("https://www.vikacg.com/")
-for name, value in cookies.items():
-    driver.add_cookie({'name': name, 'value': value})
 
 
 try:
-    driver.get("https://www.vikacg.com/wallet/mission")
-    daily = WebDriverWait(driver, 20).until(
-        EC.presence_of_element_located((By.XPATH, '//*[@id="preview-input-dynamic"]/div[1]/div[2]/div[2]/button'))
-    )
-    daily.click()
+    driver.get("https://www.eohut.com/")
+    print('加载完成')
+
+    log=driver.execute_script("""var button = document.querySelector('.initiate-checkin');
+    button.click();""")
+    print(log)
     # 创建一个名为a.txt的空文件
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔签到成功！")
