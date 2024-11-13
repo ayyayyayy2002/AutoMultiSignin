@@ -62,7 +62,7 @@ try:
 
 except Exception as e:
     with open("a.txt", "a", encoding='utf-8') as file:
-        file.write("\n  ❗签到失败！")
+        file.write(f"\n  ❗签到失败：{repr(e)}")
         print(e)
 
 
