@@ -63,7 +63,6 @@ try:
         file.write("\n  ✔签到成功！")
 
 except Exception as e:
-    print('')
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ❗签到失败！")
         print(e)

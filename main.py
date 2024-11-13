@@ -31,8 +31,7 @@ if UA:
             file.write("\nSouthplus签到结果：")
         try:
             # 运行 SouthPlus.py 脚本
-            result = subprocess.run(['python', 'SouthPlus.py'], check=True, capture_output=True, text=True)
-            print(result.stdout)  # 如果成功，打印标准输出
+            subprocess.run(['python', 'SouthPlus.py'], check=True, capture_output=True)
         except Exception as e:
             print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
@@ -49,8 +48,7 @@ if UA:
             file.write("\nAcgFun签到结果：")
         try:
             # 运行 SouthPlus.py 脚本
-            result = subprocess.run(['python', 'AcgFun.py'], check=True, capture_output=False, text=True)
-            print(result.stdout)  # 如果成功，打印标准输出
+            subprocess.run(['python', 'AcgFun.py'], check=True, capture_output=False)
         except Exception as e:
             print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
@@ -67,8 +65,7 @@ if UA:
             file.write("\nVikACG签到结果：")
         try:
             # 运行 SouthPlus.py 脚本
-            result = subprocess.run(['python', 'VikACG.py'], check=True, capture_output=True, text=True)
-            print(result.stdout)  # 如果成功，打印标准输出
+            subprocess.run(['python', 'VikACG.py'], check=True, capture_output=True)
         except Exception as e:
             print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
