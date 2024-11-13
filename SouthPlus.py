@@ -1,7 +1,6 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.service import Service
-from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 import os
@@ -60,9 +59,9 @@ try:
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔日常任务领取！")
 
-except TimeoutException:
+except Exception as e:
     with open("a.txt", "a", encoding='utf-8') as file:
-        file.write("\n  ❗日常领取失败！")
+        file.write(f"\n  ❗日常领取失败：\n{str(e)}")
 
 
 try:
@@ -74,9 +73,9 @@ try:
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔日常任务完成！")
 
-except TimeoutException:
+except Exception as e:
     with open("a.txt", "a", encoding='utf-8') as file:
-        file.write("\n  ❗日常任务失败！")
+        file.write(f"\n  ❗日常任务失败：\n{str(e)}")
 
 
 
