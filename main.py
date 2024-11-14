@@ -9,6 +9,7 @@ USERID = os.environ.get('USERID')
 SOUTHPLUS = os.environ.get('SOUTHPLUS')
 ACGFUN = os.environ.get('ACGFUN')
 EOHUT = os.environ['EOHUT']
+VIKACG = os.environ['VIKACG']
 
 
 
@@ -69,6 +70,19 @@ if UA:
             file.write("\n  😢不进行EoHut签到")
 
 
+    if VIKACG:
+        with open("a.txt", "a", encoding='utf-8') as file:
+            file.write("\nVikACG签到结果：")
+        try:
+            # 运行 SouthPlus.py 脚本
+            subprocess.run(['python', 'VikACG.py'], check=True, capture_output=False)
+        except Exception as e:
+            #print(e)
+            with open("a.txt", "a", encoding='utf-8') as file:
+                file.write(f"\n  😅VikACG签到出错：\n{str(e)}")
+    else:
+        with open("a.txt", "a", encoding='utf-8') as file:
+            file.write("\n  😢不进行VikACG签到")
 
 
 
