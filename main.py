@@ -11,7 +11,7 @@ SOUTHPLUS = os.environ.get('SOUTHPLUS')
 ACGFUN = os.environ.get('ACGFUN')
 EOHUT = os.environ['EOHUT']
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
-
+os.environ['UA'] = UA
 
 
 
