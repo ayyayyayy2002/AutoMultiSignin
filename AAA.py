@@ -7,9 +7,10 @@ import time
 COOKIE = ''
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
 cookies = {}
-for cookie in COOKIE.split('; '):
-    name, value = cookie.split('=', 1)  # 只分割第一个等号
-    cookies[name] = value
+if COOKIE:
+    for cookie in COOKIE.split('; '):
+        name, value = cookie.split('=', 1)  # 只分割第一个等号
+        cookies[name] = value
 
 
 chrome_binary_path = 'chrome-win\chrome.exe'
