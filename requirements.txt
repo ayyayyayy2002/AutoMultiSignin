@@ -1,2 +1,4 @@
 selenium==4.26.1
-requests
+requests==2.32.3
+
+undetected-chromedriver==3.5.5
