@@ -1,10 +1,6 @@
 import time
-
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
 from selenium import webdriver
+import undetected_chromedriver as uc
 import os
 
 
@@ -31,7 +27,7 @@ for cookie in SOUTHPLUS.split('; '):
 #chrome_driver_path = os.path.join(base_dir, '附加文件', '运行数据','chromedriver.exe')
 
 
-options = webdriver.ChromeOptions()
+options = uc.ChromeOptions()
 options.add_argument("--disable-blink-features=AutomationControlled")
 #options.binary_location = chrome_binary_path  # 指定 Chrome 浏览器的可执行文件路径
 options.add_argument("--disable-gpu")
@@ -40,7 +36,7 @@ options.add_argument(f'--user-agent={UA}')
 options.add_argument("disable-cache")#禁用缓存
 options.add_argument("--headless")
 #service = Service(executable_path=chrome_driver_path)
-driver = webdriver.Chrome(options=options)  # 启动 Chrome 浏览器
+driver = uc.Chrome( options=options)  # 启动 Chrome 浏览器
 #driver = webdriver.Chrome(service=service,options=options)  # 启动 Chrome 浏览器
 driver.set_window_size(1000, 700)  # 设置浏览器窗口大小（宽度, 高度）
 #driver.set_window_position(-850, 775)  # 设置浏览器窗口位置（x, y）
