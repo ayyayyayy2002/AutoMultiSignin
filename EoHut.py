@@ -7,7 +7,6 @@ import os
 
 EOHUT = os.environ['EOHUT']
 UA = os.environ['UA']
-print("\n",UA,"\n")
 cookies = {}
 for cookie in EOHUT.split('; '):
     name, value = cookie.split('=', 1)  # 只分割第一个等号
