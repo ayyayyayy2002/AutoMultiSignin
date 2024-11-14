@@ -1,9 +1,9 @@
-import time
-from selenium import webdriver
 import undetected_chromedriver as uc
+import subprocess
+import time
 import os
 
-import subprocess
+
 
 
 chrome_version = subprocess.check_output("google-chrome --version", shell=True).decode('utf-8')
@@ -51,7 +51,6 @@ for name, value in cookies.items():
 
 try:
     driver.get("https://www.south-plus.net/plugin.php?H_name-tasks.html")
-    print(driver.page_source)
     driver.execute_script("""document.getElementById("p_15").getElementsByTagName("a")[0].click();""")
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔日常任务领取！")
