@@ -18,7 +18,7 @@ EOHUT = os.environ['EOHUT']
 
 
 with open("a.txt", "w", encoding='utf-8') as file:
-    file.write(f"{UA}")
+    pass
 
 
 

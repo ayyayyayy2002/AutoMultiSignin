@@ -11,6 +11,7 @@ version_main = int(chrome_version.split()[2].split('.')[0])
 print(chrome_version,version_main)
 SOUTHPLUS = os.environ['SOUTHPLUS']
 UA = os.environ['UA']
+print("\n",UA,"\n")
 cookies = {}
 for cookie in SOUTHPLUS.split('; '):
     name, value = cookie.split('=', 1)  # 只分割第一个等号

@@ -4,6 +4,7 @@ import os
 
 ACGFUN = os.environ['ACGFUN']
 UA = os.environ['UA']
+print("\n",UA,"\n")
 cookies = {}
 for cookie in ACGFUN.split('; '):
     name, value = cookie.split('=', 1)  # 只分割第一个等号
