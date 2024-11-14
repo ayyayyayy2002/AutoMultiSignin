@@ -39,6 +39,7 @@ jobs:
         env:
 #          CHROME: ${{ steps.setup-chrome.outputs.chrome-path }}  # 设置 Chrome 路径为环境变量
 #          DRIVER: ${{ steps.setup-chrome.outputs.chromedriver-path }}  # 设置 Chrome 路径为环境变量
+          UA: ${{ secrets.UA }}  # 使用 Secret 变量
           BOTTOKEN: ${{ secrets.BOTTOKEN }}  # 使用 Secret 变量
           USERID: ${{ secrets.USERID }}  # 使用 Secret 变量
           SOUTHPLUS: ${{ secrets.SOUTHPLUS }}  # 使用 Secret 变量
