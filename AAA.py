@@ -4,7 +4,7 @@ import time
 
 
 
-COOKIE = ''
+COOKIE = ""
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
 cookies = {}
 if COOKIE:
@@ -31,6 +31,7 @@ driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () =>
 driver.get("https://baidu.com/")
 for name, value in cookies.items():
     driver.add_cookie({'name': name, 'value': value})
+driver.refresh()
 time.sleep(10000)
 
 
