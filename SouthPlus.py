@@ -55,6 +55,31 @@ except Exception as e:
         print(repr(e))
 
 
+try:
+    driver.get("https://www.south-plus.net/plugin.php?H_name-tasks.html")
+    driver.execute_script("""document.getElementById("p_14").getElementsByTagName("a")[0].click();""")
+    with open("a.txt", "a", encoding='utf-8') as file:
+        file.write("\n  ✔周常任务领取！")
+
+except Exception as e:
+    with open("a.txt", "a", encoding='utf-8') as file:
+        file.write(f"\n  ❗周常领取失败：{repr(e)}")
+        print(e)
+
+
+try:
+    driver.get("https://www.south-plus.net/plugin.php?H_name-tasks-actions-newtasks.html.html")
+    driver.execute_script("""document.getElementById("both_14").getElementsByTagName("a")[0].click();""")
+    with open("a.txt", "a", encoding='utf-8') as file:
+        file.write("\n  ✔周常任务完成！")
+
+except Exception as e:
+    with open("a.txt", "a", encoding='utf-8') as file:
+        file.write(f"\n  ❗周常任务失败：{repr(e)}")
+        print(e)
+        print(repr(e))
+
+
 
 driver.quit()
 exit(0)
