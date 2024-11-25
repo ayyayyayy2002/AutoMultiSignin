@@ -1,5 +1,6 @@
 import subprocess
 import requests
+import sys
 import os
 
 
@@ -31,7 +32,7 @@ if UA:
             file.write("\nSouthplus签到结果：")
         try:
             # 运行 SouthPlus.py 脚本
-            subprocess.run(['python', 'SouthPlus.py'], check=True, capture_output=False)
+            subprocess.run([sys.executable, 'SouthPlus.py'], check=True, capture_output=False)
         except Exception as e:
             #print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
@@ -45,7 +46,7 @@ if UA:
             file.write("\nAcgFun签到结果：")
         try:
             # 运行 SouthPlus.py 脚本
-            subprocess.run(['python', 'AcgFun.py'], check=True, capture_output=False)
+            subprocess.run([sys.executable, 'AcgFun.py'], check=True, capture_output=False)
         except Exception as e:
             #print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
@@ -60,7 +61,7 @@ if UA:
             file.write("\nEoHut签到结果：")
         try:
             # 运行 SouthPlus.py 脚本
-            subprocess.run(['python', 'EoHut.py'], check=True, capture_output=False)
+            subprocess.run([sys.executable, 'EoHut.py'], check=True, capture_output=False)
         except Exception as e:
             #print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
@@ -75,7 +76,7 @@ if UA:
             file.write("\nVikACG签到结果：")
         try:
             # 运行 SouthPlus.py 脚本
-            subprocess.run(['python', 'VikACG.py'], check=True, capture_output=False)
+            subprocess.run([sys.executable, 'VikACG.py'], check=True, capture_output=False)
         except Exception as e:
             #print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
