@@ -11,6 +11,7 @@ SOUTHPLUS = os.environ.get('SOUTHPLUS')
 ACGFUN = os.environ.get('ACGFUN')
 EOHUT = os.environ['EOHUT']
 VIKACG = os.environ['VIKACG']
+V2EX = os.environ['V2EX']
 
 
 
@@ -88,6 +89,21 @@ if UA:
 
 
 
+
+
+    if V2EX:
+        with open("a.txt", "a", encoding='utf-8') as file:
+            file.write("\nV2EX签到结果：")
+        try:
+            # 运行 SouthPlus.py 脚本
+            subprocess.run([sys.executable, 'VikACG.py'], check=True, capture_output=False)
+        except Exception as e:
+            #print(e)
+            with open("a.txt", "a", encoding='utf-8') as file:
+                file.write(f"\n  😅V2EX签到出错：\n{str(e)}")
+    else:
+        with open("a.txt", "a", encoding='utf-8') as file:
+            file.write("\n  😢不进行V2EX签到")
 
 
 
