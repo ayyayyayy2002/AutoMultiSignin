@@ -6,7 +6,7 @@
 fork或者clone到自己的仓库，配置好Secrets即可，程序会自动运行
  
  
-## Secrets列表🐍 
+## Secrets列表🔐 
 UA：抓取Cookie的浏览器的UserAgent字符串  
 BOTTOKEN：TelegramBot的密钥  
 USERID：接收推送的Telegram账号的ID  
@@ -20,7 +20,7 @@ ACGFUN：AcgFun的Cookie
 
   
 ## 目前问题😒  
-1，AcgFun的签到结果判断有问题，后续会修复  
+1，暂无
 
 
 ## 感谢🤝  
