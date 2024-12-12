@@ -46,6 +46,7 @@ jobs:
           ACGFUN: ${{ secrets.ACGFUN }}  # 使用 Secret 变量
           EOHUT: ${{ secrets.EOHUT }}  # 使用 Secret 变量
           VIKACG: ${{ secrets.VIKACG }}  # 使用 Secret 变量
+          V2EX: ${{ secrets.V2EX }}  # 使用 Secret 变量
 
         run: |
           python main.py  # 替换为实际的脚本名称
