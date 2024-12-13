@@ -30,7 +30,7 @@ try:
     driver.get("https://www.v2ex.com/mission/daily")
     driver.execute_script("document.getElementsByClassName('super normal button').click();")
     with open("a.txt", "a", encoding='utf-8') as file:
-        file.write(driver.page_source)
+        file.write("\n  ✔签到成功！")
 
 except Exception as e:
     with open("a.txt", "a", encoding='utf-8') as file:
