@@ -26,9 +26,9 @@ driver.get("https://www.v2ex.com/")
 for name, value in cookies.items():
     driver.add_cookie({'name': name, 'value': value})
 
-
 try:
-    driver.get("https://www.v2ex.com/")
+    driver.get("https://www.v2ex.com/mission/daily")
+    driver.execute_script("document.getElementsByClassName('super normal button').click();")
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔签到成功！")
 
