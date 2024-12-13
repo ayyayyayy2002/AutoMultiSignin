@@ -96,7 +96,7 @@ if UA:
             file.write("\nV2EX签到结果：")
         try:
             # 运行 SouthPlus.py 脚本
-            subprocess.run([sys.executable, 'VikACG.py'], check=True, capture_output=False)
+            subprocess.run([sys.executable, 'V2EX.py'], check=True, capture_output=False)
         except Exception as e:
             #print(e)
             with open("a.txt", "a", encoding='utf-8') as file:
