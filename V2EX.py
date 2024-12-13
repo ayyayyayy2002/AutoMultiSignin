@@ -28,14 +28,14 @@ for name, value in cookies.items():
 
 try:
     driver.get("https://www.v2ex.com/mission/daily")
-    driver.execute_script("document.getElementsByClassName('super normal button').click();")
+    driver.execute_script("document.getElementsByClassName('super normal button')[0].click();")
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔签到成功！")
 
 except Exception as e:
     with open("a.txt", "a", encoding='utf-8') as file:
-        file.write(driver.page_source)
-        print(driver.page_source)
+        file.write(f"\n  ❗签到失败：{repr(e)}")
+        print(e)
 
 
 driver.quit()
