@@ -12,6 +12,7 @@ BOTTOKEN：TelegramBot的密钥
 USERID：接收推送的Telegram账号的ID  
 SOUTHPLUS：SouthPlus的Cookie  
 ACGFUN：AcgFun的Cookie  
+V2EX:V2EX的Cookie
 
 ## 如何获取Cookie和UserAgent🧐
 打开目标网站，登录账号。按F12，在弹出的“开发者工具”里选择“网络”选项卡  
