@@ -71,7 +71,7 @@ if UA:
         with open("a.txt", "a", encoding='utf-8') as file:
             file.write("\n  😢不进行EoHut签到")
 
-
+    '''
     if VIKACG:
         with open("a.txt", "a", encoding='utf-8') as file:
             file.write("\nVikACG签到结果：")
@@ -86,7 +86,7 @@ if UA:
         with open("a.txt", "a", encoding='utf-8') as file:
             file.write("\n  😢不进行VikACG签到")
 
-
+    '''
 
 
 
