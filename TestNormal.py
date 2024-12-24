@@ -29,6 +29,7 @@ driver = webdriver.Chrome(service=service, options=options)  # 启动 Chrome 浏
 driver.set_window_size(1000, 700)  # 设置浏览器窗口大小（宽度, 高度）
 driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 driver.get("https://baidu.com/")
+driver.delete_all_cookies()
 for name, value in cookies.items():
     driver.add_cookie({'name': name, 'value': value})
 driver.refresh()
