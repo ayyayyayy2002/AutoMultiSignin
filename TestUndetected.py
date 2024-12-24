@@ -1,7 +1,10 @@
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.common import TimeoutException
+from selenium.webdriver.common.by import By
 import undetected_chromedriver as uc
-import subprocess
-import time
-import os
+
+
 
 
 COOKIE = ""
@@ -29,24 +32,26 @@ options.add_argument("disable-cache")
 #options.add_argument("--headless")
 driver = uc.Chrome( options=options, version_main=version_main)  # 启动 Chrome 浏览器
 driver.get("https://www.vikacg.com/post")
-time.sleep(10)
 for name, value in cookies.items():
     driver.add_cookie({'name': name, 'value': value})
 
 try:
-    driver.get("hhttps://www.vikacg.com/wallet/mission")
+    driver.get("https://www.vikacg.com/wallet/mission")
     page_source = driver.page_source
 
     # 打印网页源码
-    print(page_source)
-    driver.execute_script("""document.querySelector('.btn.inline.bg-gradient-info.btn-sm').click();""")
+    WebDriverWait(driver, 20, 1).until(
+        EC.presence_of_element_located((By.XPATH, '/html/body/div/div/div[5]/div[2]'))
+    ).click()
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔签到成功！")
 
-except Exception as e:
+except (Exception,TimeoutException) as e:
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write(f"\n  ❗签到失败：{repr(e)}")
         print(e)
+
+
 
 
 
