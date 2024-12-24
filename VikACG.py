@@ -32,6 +32,10 @@ for name, value in cookies.items():
 
 try:
     driver.get("hhttps://www.vikacg.com/wallet/mission")
+    page_source = driver.page_source
+
+    # 打印网页源码
+    print(page_source)
     driver.execute_script("""document.querySelector('.btn.inline.bg-gradient-info.btn-sm').click();""")
     with open("a.txt", "a", encoding='utf-8') as file:
         file.write("\n  ✔签到成功！")
